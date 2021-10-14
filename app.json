@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cartoon",
-    "slug": "cartoon",
+    "name": "oyo ya biso comics",
+    "slug": "oyo-ya-biso-comics",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Oyo Ya Biso Comics mobile application"
   }
 }
