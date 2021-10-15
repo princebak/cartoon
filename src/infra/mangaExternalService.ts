@@ -10,4 +10,7 @@ export default class MangaExternalService{
             return MangasMock;
         }
     }
+    static getLastReads(credentials : any = {}){
+        return MangasMock;
+    }
 }

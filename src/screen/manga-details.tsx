@@ -24,7 +24,9 @@ const MangaDetailsScreen : FunctionComponent<IScreenMangaDetailsProps> = ({navig
                     </TouchableOpacity>
 
                 </View>
-                <MangaEpisodeList episodes={manga.episodes} />
+                <View>
+                    <MangaEpisodeList episodes={manga.episodes} />
+                </View>
             </View>
         </ScrollView>
     )

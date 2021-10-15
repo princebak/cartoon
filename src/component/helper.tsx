@@ -11,7 +11,7 @@ type props = {
 export const Hr : FunctionComponent<props> = ({width = 95, height= 1, color= "rgb(22,156,254)"}) =>{
 
     return (
-        <View style={{height : height, width : width + "%", backgroundColor : color}}>
+        <View style={{height : height, width : width + "%", backgroundColor : color, alignSelf  : "center"}}>
 
         </View>
     )

@@ -34,16 +34,17 @@ const MangaListNormal : FunctionComponent<{header : string, mangaPressEventHandl
                 showsHorizontalScrollIndicator={false}
                 ListEmptyComponent={ <ListEmptyComponent/>}
             />
-            <View style={styles.controlsZone}>
-                <TouchableOpacity  style={[styles.controlButton, {left : 0}]} onPress={() => console.log("prevButton pressed")} >
-                    {/*<FontAwesomeIcon icon="coffee" />*/}
-                    <Ionicons style={styles.indicator} name="arrow-back-circle" />
-                </TouchableOpacity>
-                <TouchableOpacity  style={[styles.controlButton, {right : 5}]} onPress={() => console.log("prevButton pressed")} >
-                    {/*<FontAwesomeIcon icon="coffee" />*/}
-                    <Ionicons style={styles.indicator} name="arrow-forward-circle" />
-                </TouchableOpacity>
-            </View>
+
+            {/*<View style={styles.controlsZone}>*/}
+            {/*    <TouchableOpacity  style={[styles.controlButton, {left : 0}]} onPress={() => console.log("prevButton pressed")} >*/}
+            {/*        /!*<FontAwesomeIcon icon="coffee" />*!/*/}
+            {/*        <Ionicons style={styles.indicator} name="arrow-back-circle" />*/}
+            {/*    </TouchableOpacity>*/}
+            {/*    <TouchableOpacity  style={[styles.controlButton, {right : 5}]} onPress={() => console.log("prevButton pressed")} >*/}
+            {/*        /!*<FontAwesomeIcon icon="coffee" />*!/*/}
+            {/*        <Ionicons style={styles.indicator} name="arrow-forward-circle" />*/}
+            {/*    </TouchableOpacity>*/}
+            {/*</View>*/}
         </View>
 
     )
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         width : "100%",
         backgroundColor : "whitesmoke",
         marginVertical : 10,
-        marginHorizontal : 10,
+        // marginHorizontal : 10,
     },
     header:{
         fontWeight : "bold",

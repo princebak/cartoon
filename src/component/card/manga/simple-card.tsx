@@ -12,7 +12,7 @@ import {
 import IMangaCardProps from "../../../util/props/manga";
 
 
-const MangaSimpleCard : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler = (manga) => console.log("simple card manga pressed : ", manga)}) =>{
+const MangaSimpleCard : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler = (manga) => console.log("no handler registered for the simple card")}) =>{
 
     return(
         <TouchableOpacity activeOpacity={0.92} onPress={() =>  pressEventHandler(manga)} >
@@ -28,11 +28,12 @@ const MangaSimpleCard : FunctionComponent<IMangaCardProps> = ({manga, pressEvent
 const styles = StyleSheet.create({
     card:{
         // marginHorizontal : 20,
-        marginRight: 20,
+        // marginRight: 20,
         width : 150,
         height : 200,
         alignItems : "center",
         justifyContent : "center",
+        margin : 10,
     },
     backgroundImage:{
         borderRadius : 20,
