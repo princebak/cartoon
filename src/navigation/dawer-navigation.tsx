@@ -10,11 +10,12 @@ import EmptyHeaderComponent from "../component/empty-header-component";
 const DrawerNavigation : FunctionComponent = () =>{
     const Drawer = createDrawerNavigator();
 
+
     return (
         <Drawer.Navigator screenOptions={ {header : (props) => <HeaderComponent props={props} />}}>
-            <Drawer.Screen options={{ title : "Accueil" }} name={TAB_BOTTOM_NAVIGATION} component={TabBottomNavigation}/>
-            <Drawer.Screen options={{header : (props) => <EmptyHeaderComponent />, title : "Apropos de YBC" }}  name={ABOUT_US_SCREEN} component={AboutUsScreen}/>
-            <Drawer.Screen options={{header : (props) => <EmptyHeaderComponent />, title : "connexion" }}  name={CONNEXION_SCREEN} component={AboutUsScreen}/>
+            <Drawer.Screen options={ {  title : "Accueil" }} name={TAB_BOTTOM_NAVIGATION} component={TabBottomNavigation}/>
+            <Drawer.Screen options={{ title : "Apropos de YBC" }}  name={ABOUT_US_SCREEN} component={AboutUsScreen}/>
+            <Drawer.Screen options={{ title : "connexion" }}  name={CONNEXION_SCREEN} component={AboutUsScreen}/>
         </Drawer.Navigator>
     )
 }

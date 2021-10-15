@@ -7,15 +7,14 @@ import {SEARCH_SCREEN} from "../util/constant/screens";
 
 const HeaderComponent : FunctionComponent<{props : DrawerHeaderProps}> = ({props}) =>{
 
-    const [isSearchVisible, setSearchVisible] = useState<boolean>(false)
-    const {setText} = useGlobalContext()
+    const {setText, isSearchScreenFocused} = useGlobalContext();
 
     const onBergerButtonPressHandler = () =>{
         props.navigation.openDrawer();
     }
     return(
         <View style={styles.container}>
-            {!isSearchVisible?
+            {!isSearchScreenFocused?
                 <>
                     <TouchableOpacity style={styles.bergerButton} onPress={onBergerButtonPressHandler}>
                         <Ionicons style={styles.icon} name="apps" />
@@ -30,8 +29,8 @@ const HeaderComponent : FunctionComponent<{props : DrawerHeaderProps}> = ({props
                     onChangeText={text => setText(text)}
                 />
             }
-            <TouchableOpacity style={styles.searchButton} onPress={ () => { setSearchVisible(!isSearchVisible); if(!isSearchVisible) props.navigation.navigate(SEARCH_SCREEN); else props.navigation.goBack() ; }}>
-                <Ionicons style={[styles.icon, isSearchVisible ?  {color : "silver", fontSize : 35, right : 12} : {color : "#fff"} ]} name={isSearchVisible ? "close-circle" : "ios-search-circle-sharp"} />
+            <TouchableOpacity style={styles.searchButton} onPress={ () => { if(!isSearchScreenFocused) props.navigation.navigate(SEARCH_SCREEN); else props.navigation.goBack() ; }}>
+                <Ionicons style={[styles.icon, isSearchScreenFocused ?  {color : "silver", fontSize : 35, right : 12} : {color : "#fff"} ]} name={isSearchScreenFocused ? "close-circle" : "ios-search-circle-sharp"} />
             </TouchableOpacity>
             {/*<Image source={require("../../assets/custom/bonjour.jpg")} style={styles.logo} />*/}
         </View>

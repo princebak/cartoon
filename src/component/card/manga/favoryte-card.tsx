@@ -11,7 +11,7 @@ import {
 import IMangaCardProps from "../../../util/props/manga";
 import IManga from "../../../model/manga";
 
-const MangaFavoriteCard : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler = (manga : IManga) => console.log(manga)}) =>{
+const MangaFavoriteCard : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler = (manga : IManga) => {}}) =>{
 
     return (
         <TouchableOpacity activeOpacity={0.92} onPress={() => pressEventHandler(manga) }>

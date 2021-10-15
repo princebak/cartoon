@@ -9,12 +9,18 @@ import UserProfileScreen from "../screen/user-profile";
 import EmptyHeaderComponent from "../component/empty-header-component";
 import{StyleSheet} from "react-native";
 import TabBottomIcon from "../component/tab-bottom-icon";
+import {useGlobalContext} from "../util/context/global";
 
 const TabBottomNavigation : FunctionComponent = () =>{
     const bottomNavigation = createBottomTabNavigator();
 
+    const {setIsSearchScreenFocused} = useGlobalContext()
+    const stateChangeHandler = (e : any) =>{
+        const currentScreenIndex = e.data.state.index ;
+        setIsSearchScreenFocused( currentScreenIndex == 2)
+    }
     return (
-        <bottomNavigation.Navigator screenOptions={  {tabBarHideOnKeyboard : true, header : (props) => <EmptyHeaderComponent/>, title : "" }} >
+        <bottomNavigation.Navigator screenListeners={ {state  : (e) => stateChangeHandler(e) } } screenOptions={  {tabBarHideOnKeyboard : true, header : (props) => <EmptyHeaderComponent/>, title : "" }} >
             <bottomNavigation.Screen options={{tabBarIcon : (props) => <TabBottomIcon icon="home" focused={props.focused} /> }} name={MAIN_STACK_NAVIGATION} component={MainStackNavigation}/>
             <bottomNavigation.Screen options={{tabBarIcon : (props) => <TabBottomIcon icon="heart" focused={props.focused} /> }} name={FAVORITES_SCREEN} component={FavoritesScreen}/>
             <bottomNavigation.Screen options={{tabBarIcon : (props) => <TabBottomIcon icon="search" focused={props.focused} /> }} name={SEARCH_SCREEN} component={SearchScreen}/>
