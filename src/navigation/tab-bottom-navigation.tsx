@@ -14,10 +14,12 @@ import {useGlobalContext} from "../util/context/global";
 const TabBottomNavigation : FunctionComponent = () =>{
     const bottomNavigation = createBottomTabNavigator();
 
-    const {setIsSearchScreenFocused} = useGlobalContext()
+    const {setText, isSearchScreenFocused, setIsSearchScreenFocused} = useGlobalContext()
     const stateChangeHandler = (e : any) =>{
         const currentScreenIndex = e.data.state.index ;
         setIsSearchScreenFocused( currentScreenIndex == 2)
+        if(!isSearchScreenFocused)
+            setText("")
     }
     return (
         <bottomNavigation.Navigator screenListeners={ {state  : (e) => stateChangeHandler(e) } } screenOptions={  {tabBarHideOnKeyboard : true, header : (props) => <EmptyHeaderComponent/>, title : "" }} >
