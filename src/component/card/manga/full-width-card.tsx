@@ -15,12 +15,11 @@ const image = require("../../../../assets/custom/bonjour.jpg")
 
 
 const MangaFullWidthCard  : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler}) =>{
-
     return (
-        <TouchableOpacity onPress={() => pressEventHandler ? pressEventHandler(manga) : null}>
+        <TouchableOpacity activeOpacity={0.92} onPress={() => pressEventHandler ? pressEventHandler(manga) : null}>
             <ImageBackground  style={styles.card} imageStyle={styles.backgroundImage} source={{uri : manga.imageUrl}} >
                 <View style={[styles.overlay, styles.overlay]}>
-
+                    { /*empty view (don't have children), used to apply an overlay effect on the parent*/ }
                 </View>
                 <Text style={ styles.title}>
                     {manga.title}

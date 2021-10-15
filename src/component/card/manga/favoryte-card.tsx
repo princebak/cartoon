@@ -14,7 +14,7 @@ import IManga from "../../../model/manga";
 const MangaFavoriteCard : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler = (manga : IManga) => console.log(manga)}) =>{
 
     return (
-        <TouchableOpacity onPress={() => pressEventHandler(manga) }>
+        <TouchableOpacity activeOpacity={0.92} onPress={() => pressEventHandler(manga) }>
             <ImageBackground source={{uri : manga.imageUrl}} style={styles.card} imageStyle={styles.imageStyle}>
                 <View style={styles.overlay}></View>
                 <Text style={styles.title}> {manga.title} </Text>

@@ -10,7 +10,7 @@ const FavoritesScreen : FunctionComponent<IScreenGlobalProps> = ({route, navigat
     const [mangas, setMangas] = useState<IManga[]>(MangasMock);
 
     const renderItem = (manga : IManga) =>{
-        return <MangaFavoriteCard manga={manga} />
+        return <MangaFavoriteCard key={manga.id} manga={manga} />
     }
     return(
 

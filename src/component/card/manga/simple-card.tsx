@@ -15,7 +15,7 @@ import IMangaCardProps from "../../../util/props/manga";
 const MangaSimpleCard : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler = (manga) => console.log("simple card manga pressed : ", manga)}) =>{
 
     return(
-        <TouchableOpacity onPress={() =>  pressEventHandler(manga)} >
+        <TouchableOpacity activeOpacity={0.92} onPress={() =>  pressEventHandler(manga)} >
             <ImageBackground imageStyle={styles.backgroundImage} style={styles.card} source={ {uri : manga.imageUrl } } >
                 <View style={styles.overlay}></View>
                 <Text style={styles.title}>

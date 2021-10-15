@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useState} from "react";
+import React, {FunctionComponent, useLayoutEffect, useState} from "react";
 import {StyleSheet, View, Image, TouchableOpacity, TextInput, Dimensions} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
 import {DrawerHeaderProps} from "@react-navigation/drawer";

@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect, useState} from "react";
+import React, {FunctionComponent, useEffect, useLayoutEffect, useState} from "react";
 import {StyleSheet, View, Text, Image, FlatList, Keyboard} from "react-native";
 import IScreenGlobalProps from "../util/props/screen";
 import IManga, {MangasMock} from "../model/manga";
@@ -8,13 +8,13 @@ import {useGlobalContext} from "../util/context/global";
 import MangaExternalService from "../infra/mangaExternalService";
 
 
-const SearchScreen : FunctionComponent<IScreenGlobalProps> = ({route, navigation}) =>{
+const SearchScreen : FunctionComponent<IScreenGlobalProps> = ({navigation, route}) =>{
     const [mangas, setMangas] = useState<IManga[]>(MangasMock);
-    const {text} = useGlobalContext()
+    const {text, setIsSearchScreenFocused} = useGlobalContext()
 
     useEffect( () => {
         setMangas(MangaExternalService.getMangas(text))
-    }, [text])
+    }, [text] )
 
     const onPressEventHandler = (manga : IManga) =>{
         console.log("manga pressed on search screen : ", manga);

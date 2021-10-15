@@ -6,7 +6,7 @@ import {Ionicons} from "@expo/vector-icons";
 const MangaSearchResultCard : FunctionComponent<IMangaCardProps> = ({manga, pressEventHandler}) =>{
 
     return (
-        <TouchableOpacity style={styles.card} onPress={() => pressEventHandler(manga)}>
+        <TouchableOpacity activeOpacity={0.92} style={styles.card} onPress={() => pressEventHandler? pressEventHandler(manga) : console.debug("no handler registered for the press event")}>
             <Image style={styles.image} source={{uri: manga.imageUrl}} />
             <View style={styles.overlay}>
                 <Text style={styles.title}>{manga.title}</Text>
